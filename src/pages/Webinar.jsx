@@ -13,7 +13,7 @@ export default function Webinar() {
     document.body.style.overflow = "auto";
   };
 
-  // 🔥 SESSION LOGIC WITH CUTOFF (Saturday 6PM)
+  // SESSION LOGIC
   const getNextSession = () => {
     const now = new Date();
     const day = now.getDay();
@@ -50,7 +50,6 @@ export default function Webinar() {
   });
 
   useEffect(() => {
-    // Update formatted date
     setFormattedDate(
       targetDate.toLocaleDateString("en-GB", {
         weekday: "long",
@@ -88,82 +87,83 @@ export default function Webinar() {
 
   return (
     <div className="bg-black text-white min-h-screen">
+
       {/* HERO */}
       <section className="relative text-center px-6 py-20 overflow-hidden">
-  <div className="absolute inset-0 bg-gradient-to-b from-green-900/20 to-black opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-green-900/20 to-black opacity-40"></div>
 
-  <div className="relative max-w-xl mx-auto">
+        <div className="relative max-w-xl mx-auto">
 
-    {/* 🔥 HEADLINE (FIXED UX) */}
-    <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+          {/* HEADLINE */}
+          <h1 className="text-3xl md:text-5xl font-bold leading-snug">
 
-      <span className="block">
-        Why 90% of Forex Traders Fail
-      </span>
+            <span className="block">
+              Why 90% of Forex Traders Fail
+            </span>
 
-      <span className="block mt-3 text-green-400">
-        And How to Trade with Structure
-      </span>
+            <span className="block mt-3 text-green-400">
+              And How to Trade with Structure
+            </span>
 
-      <span className="block mt-2">
-        Discipline & Consistency
-      </span>
+            <span className="block mt-2">
+              Discipline & Consistency
+            </span>
 
-      <span className="block mt-4 text-lg md:text-xl text-gray-300 font-medium">
-        (Even If You’ve Been Losing for Months)
-      </span>
+            <span className="block mt-4 text-lg md:text-xl text-gray-300 font-medium">
+              (Even If You’ve Been Losing for Months)
+            </span>
 
-    </h1>
+          </h1>
 
-    {/* SUBTEXT */}
-    <p className="mt-6 text-gray-300 text-base md:text-lg">
-      Join this FREE live webinar and finally understand why your trades
-      have been inconsistent—and how to fix it.
-    </p>
+          {/* SUBTEXT */}
+          <p className="mt-6 text-gray-300 text-base md:text-lg">
+            Join this FREE live webinar and finally understand why your trades
+            have been inconsistent—and how to fix it.
+          </p>
 
-    {/* DATE */}
-    <div className="mt-5 text-sm text-gray-400 font-medium">
-      📅 Next Live Session: {formattedDate}
-      <br />
-      ⏰ Starts 8:30 PM (WAT)
-    </div>
+          {/* DATE */}
+          <div className="mt-5 text-sm text-gray-400 font-medium">
+            📅 Next Live Session: {formattedDate}
+            <br />
+            ⏰ Starts 8:30 PM (WAT)
+          </div>
 
-    {/* CTA */}
-    <div className="relative inline-block mt-8">
-      <div className="absolute inset-0 blur-3xl opacity-20 bg-green-500"></div>
+          {/* CTA */}
+          <div className="relative inline-block mt-8">
+            <div className="absolute inset-0 blur-3xl opacity-20 bg-green-500"></div>
 
-      <button
-        onClick={openForm}
-        className="relative bg-green-500 hover:bg-green-600 px-10 py-4 rounded-xl text-lg font-semibold shadow-xl shadow-green-500/40 hover:scale-105 transition transform duration-200"
-      >
-        👉 Reserve Your Free Spot
-      </button>
-    </div>
+            <button
+              onClick={openForm}
+              className="relative bg-green-500 hover:bg-green-600 px-10 py-4 rounded-xl text-lg font-semibold shadow-xl shadow-green-500/40 hover:scale-105 transition transform duration-200"
+            >
+              👉 Reserve Your Free Spot
+            </button>
+          </div>
 
-    <p className="text-xs text-gray-400 mt-3">
-      Join 100+ traders already registered • Beginner friendly
-    </p>
+          <p className="text-xs text-gray-400 mt-3">
+            Join 100+ traders already registered • Beginner friendly
+          </p>
 
-    {/* COUNTDOWN */}
-    <p className="text-sm text-gray-400 mt-6">
-      ⏳ Registration closes in:
-    </p>
+          {/* COUNTDOWN */}
+          <p className="text-xs text-gray-500 mt-6">
+            ⏳ Registration closes soon
+          </p>
 
-    <div className="mt-3 flex justify-center gap-3 flex-wrap">
-      {showDays && (
-        <CountdownBox label="Days" value={timeLeft.days} />
-      )}
-      <CountdownBox label="Hours" value={timeLeft.hours} />
-      <CountdownBox label="Minutes" value={timeLeft.minutes} />
-      <CountdownBox label="Seconds" value={timeLeft.seconds} />
-    </div>
+          <div className="mt-2 flex justify-center gap-2 flex-wrap">
+            {showDays && (
+              <CountdownBox label="Days" value={timeLeft.days} />
+            )}
+            <CountdownBox label="Hours" value={timeLeft.hours} />
+            <CountdownBox label="Minutes" value={timeLeft.minutes} />
+            <CountdownBox label="Seconds" value={timeLeft.seconds} />
+          </div>
 
-    <p className="text-xs text-gray-500 mt-2">
-      Registration closes when countdown ends
-    </p>
+          <p className="text-[11px] text-gray-600 mt-1">
+            Registration closes when countdown ends
+          </p>
 
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* WHAT YOU’LL LEARN */}
       <section className="max-w-4xl mx-auto px-6 py-12 text-center">
@@ -287,9 +287,9 @@ export default function Webinar() {
 
 function CountdownBox({ label, value }) {
   return (
-    <div className="bg-gray-900 px-4 py-3 rounded-lg border border-gray-700 text-center min-w-[70px]">
-      <div className="text-lg font-semibold text-green-400">{value}</div>
-      <div className="text-xs text-gray-400 mt-1">{label}</div>
+    <div className="bg-gray-900 px-3 py-2 rounded-md border border-gray-800 text-center min-w-[55px]">
+      <div className="text-sm font-semibold text-green-400">{value}</div>
+      <div className="text-[10px] text-gray-500 mt-1">{label}</div>
     </div>
   );
 }
