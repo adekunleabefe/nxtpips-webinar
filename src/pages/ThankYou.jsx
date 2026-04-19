@@ -102,7 +102,7 @@ export default function ThankYou() {
           <button
             onClick={() =>
               (window.location.href =
-                "https://whatsapp.com/channel/YOURCHANNEL")
+                "https://t.me/nxtpipsofficial")
             }
             className="mt-6 bg-gray-800 px-6 py-3 rounded-lg font-semibold hover:bg-gray-700 transition"
           >
