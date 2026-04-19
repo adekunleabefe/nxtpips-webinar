@@ -236,47 +236,55 @@ export default function Webinar() {
         </p>
       </section>
 
-      {/* MODAL */}
-      {showForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
-            onClick={closeForm}
-          ></div>
+    {/* MODAL */}
+{showForm && (
+  <div className="fixed inset-0 z-50 flex items-end md:items-center justify-center">
 
-          <div className="relative w-full max-w-xl mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden">
-            <div className="flex justify-between items-start px-4 py-3 border-b">
-              <div>
-                <h3 className="text-black font-semibold text-sm">
-                  Complete Your Registration
-                </h3>
-                <p className="text-xs text-gray-500">
-                  Takes less than 30 seconds
-                </p>
-              </div>
+    {/* BACKDROP */}
+    <div
+      className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+      onClick={closeForm}
+    ></div>
 
-              <button
-                onClick={closeForm}
-                className="text-black text-xl font-semibold hover:opacity-70"
-              >
-                ✕
-              </button>
-            </div>
+    {/* MODAL */}
+    <div className="relative w-full md:max-w-xl bg-white md:rounded-2xl rounded-t-2xl shadow-2xl max-h-[90vh] flex flex-col">
 
-            <p className="text-xs text-gray-500 px-4 pb-2">
-              Your details are safe. No spam.
-            </p>
-
-            <div className="w-full max-h-[80vh] overflow-y-auto bg-white">
-              <iframe
-                src="https://wamation.com.ng/f.php/ktd14956?src=webinar_lp"
-                title="NxtPips Registration"
-                className="w-full h-[600px] md:h-[650px] border-0"
-              ></iframe>
-            </div>
-          </div>
+      {/* HEADER */}
+      <div className="flex justify-between items-center px-4 py-3 border-b">
+        <div>
+          <h3 className="text-black font-semibold text-sm">
+            Complete Your Registration
+          </h3>
+          <p className="text-xs text-gray-500">
+            Takes less than 30 seconds
+          </p>
         </div>
-      )}
+
+        <button
+          onClick={closeForm}
+          className="text-black text-xl font-semibold"
+        >
+          ✕
+        </button>
+      </div>
+
+      {/* SUBTEXT */}
+      <p className="text-xs text-gray-500 px-4 py-2 border-b">
+        Your details are safe. No spam.
+      </p>
+
+      {/* FORM */}
+      <div className="flex-1 overflow-y-auto">
+        <iframe
+          src="https://wamation.com.ng/f.php/ktd14956?src=webinar_lp"
+          title="NxtPips Registration"
+          className="w-full h-[700px] border-0"
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+)}
 
       <footer className="text-center text-gray-500 text-sm py-6">
         © NxtPips Limited
