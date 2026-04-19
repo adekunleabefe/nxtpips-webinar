@@ -274,11 +274,11 @@ export default function Webinar() {
       </p>
 
       {/* FORM */}
-      <div className="flex-1 overflow-y-auto pt-2">
+      <div className="overflow-y-auto">
   <iframe
     src="https://wamation.com.ng/f.php/ktd14956?src=webinar_lp"
     title="NxtPips Registration"
-    className="w-full min-h-[500px] md:h-[650px] border-0"
+    className="w-full h-[75vh] md:h-[650px] border-0"
   ></iframe>
 </div>
 
