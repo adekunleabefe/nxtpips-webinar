@@ -1,5 +1,7 @@
 {
     "routes": [
+      { "handle": "filesystem" },
+      { "src": "^/$", "dest": "/webinar" },
       { "src": "/(.*)", "dest": "/" }
     ]
   }
