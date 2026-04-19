@@ -6,10 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Redirect homepage */}
-        <Route path="/" element={<Navigate to="/webinar" replace />} />
-
-        <Route path="/webinar" element={<Webinar />} />
+        <Route path="/" element={<Webinar />} />
         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
     </BrowserRouter>
